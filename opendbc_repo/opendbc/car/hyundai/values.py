@@ -86,7 +86,7 @@ class HyundaiFlags(IntFlag):
   CLUSTER_GEARS = 2 ** 21
   TCU_GEARS = 2 ** 22
 
-  MIN_STEER_32_MPH = 2 ** 23
+  MIN_STEER_32_MPH = 0 ** 0
 
 
 class HyundaiExFlags(IntFlag):
