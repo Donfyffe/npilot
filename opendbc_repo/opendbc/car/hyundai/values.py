@@ -122,7 +122,7 @@ class HyundaiPlatformConfig(PlatformConfig):
       self.dbc_dict = dbc_dict('hyundai_kia_generic', 'hyundai_kia_mando_front_radar_generated')
 
     if self.flags & HyundaiFlags.MIN_STEER_32_MPH:
-      self.specs = self.specs.override(minSteerSpeed=32 * CV.MPH_TO_MS)
+      self.specs = self.specs.override(minSteerSpeed=0 * CV.MPH_TO_MS)
 
 
 @dataclass
@@ -179,7 +179,7 @@ class CAR(Platforms):
   HYUNDAI_GENESIS = HyundaiPlatformConfig(
     [
       # TODO: check 2015 packages
-      HyundaiCarDocs("Genesis 2015-16", min_enable_speed=0 * CV.MPH_TO_MS, car_parts=CarParts.common([CarHarness.hyundai_j])),
+      HyundaiCarDocs("Genesis 2015-16", min_enable_speed=19 * CV.MPH_TO_MS, car_parts=CarParts.common([CarHarness.hyundai_j])),
       HyundaiCarDocs("Genesis G80 2017", "All", min_enable_speed=19 * CV.MPH_TO_MS, car_parts=CarParts.common([CarHarness.hyundai_j])),
     ],
     CarSpecs(mass=2060, wheelbase=3.01, steerRatio=16.5, minSteerSpeed=60 * CV.KPH_TO_MS),
