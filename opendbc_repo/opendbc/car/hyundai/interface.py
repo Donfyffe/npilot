@@ -36,12 +36,12 @@ class CarInterface(CarInterfaceBase):
   @staticmethod
   def get_pid_accel_limits(CP, current_speed, cruise_speed):
     v_current_kph = current_speed * CV.MS_TO_KPH
-    gas_max_bp = [0., 10., 30., 70., 130., 150.]
-    gas_max_v = [ACCEL_MAX, 1.5, 1.0, 0.5, 0.15, 0.1]
+    gas_max_bp = [0., 10., 50., 65., 80., 100., 130., 150.]
+    gas_max_v = [0.8, 1.6, 1.2, 1.0, 0.7, 0.4, 0.15, 0.1]
     return ACCEL_MIN, interp(v_current_kph, gas_max_bp, gas_max_v)
 
   @staticmethod
-  def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, alpha_long, is_release, docs) -> structs.CarParams:
+  def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, alpha_long, docs) -> structs.CarParams:
     ret.brand = "hyundai"
 
     cam_can = CanBus(None, fingerprint).CAM
